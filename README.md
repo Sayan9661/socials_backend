@@ -27,18 +27,30 @@ pip install -r requirements.txt
 
 You can interact with the application using any HTTP client like curl or Postman. Here are the available endpoints:
 
-- `POST /discussion_service`: Create a new post.
-- `GET /discussion_service/<id>`: Retrieve a post by ID.
-- `PUT /discussion_service/<id>`: Update a post by ID.
-- `DELETE /discussion_service/<id>`: Delete a post by ID.
-- `GET /discussion_service/search`: Search for posts.
+### user service
 
-- `POST /comment`: Add a comment to a post.
-- `PUT /comment/<id>`: Update a comment by ID.
-- `DELETE /comment/<id>`: Delete a comment by ID.
-- `GET /comment/<post_id>`: Get all comments for a post.
+- `POST /register`: register a user.
+- `POST /login`: login
+- `POST /follow`: follow a user
+- `POST /unfollow`: unfollow a user
+- `GET search/users`: search user
 
-Replace `discussion_service` and `comment` with the appropriate service name to interact with those services.
+### Discussion service
+
+- `POST /discussions`: Create a new discussion/post. The request body should include `text`, `image`, `user_id`, and `tags`.
+- `GET /discussions/<id>`: Retrieve a discussion by ID.
+- `PUT /discussions/<id>`: Update a discussion by ID. The request body should include `text`, `image`, `user_id`, and `tags`.
+- `DELETE /discussions/<id>`: Delete a discussion by ID.
+- `GET /discussions/search`: Search for discussions based on text or tags. Include `text` and/or `tags` as query parameters.
+
+### Comment service
+
+- `POST /comments`: Create a new comment. The request body should include `text`, `post_id`, and `user_id`.
+- `POST /comments/<id>/like`: Like a comment.
+- `POST /comments/<id>/replies`: Reply to a comment. The request body should include `text` and `user_id`.
+- `GET /comments/<id>`: Retrieve a comment by ID.
+- `PUT /comments/<id>`: Update a comment by ID. The request body should include `text`.
+- `DELETE /comments/<id>`: Delete a comment by ID.
 
 ## Testing
 
