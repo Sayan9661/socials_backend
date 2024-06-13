@@ -54,4 +54,4 @@ You can interact with the application using any HTTP client like curl or Postman
 
 ## Testing
 
-You can test the application using the provided Postman collection. Import the collection into Postman and send the requests to your server.
+You can test the application using the Postman collections in the test_postman folder. Import the collections into Postman and send the requests to your server. There is a collection to test each service.

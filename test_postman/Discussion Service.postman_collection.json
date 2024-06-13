@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "0b128487-3c54-49a0-9321-dd1a174e1bc6",
+		"name": "Discussion Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36271001"
+	},
+	"item": [
+		{
+			"name": "Create Discussion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"text\": \"This is a new discussion\", \"image\": \"image_url\", \"user_id\": 1, \"tags\": [\"tag1\", \"tag2\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/discussions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"discussions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Discussion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/discussions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"discussions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Discussion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"text\": \"This is an updated discussion\", \"image\": \"updated_image_url\", \"user_id\": 1, \"tags\": [\"tag1\", \"tag3\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/discussions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"discussions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Discussions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/discussions/search?tags=tag1&text=discussion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"discussions",
+						"search"
+					],
+					"query": [
+						{
+							"key": "tags",
+							"value": "tag1"
+						},
+						{
+							"key": "text",
+							"value": "discussion"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Discussion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/discussions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"discussions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
